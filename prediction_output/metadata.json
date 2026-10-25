@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "forecast_vintages_verified": false,
+  "purpose": "Hypothetical retrospective research; not demonstrated executable market returns",
+  "config": {
+    "zone": "DK_2",
+    "timezone": "Europe/Copenhagen",
+    "start_date": "2025-09-01",
+    "end_date": "2026-10-20",
+    "latitude": 55.6759,
+    "longitude": 12.5655,
+    "weather_model": "dmi_seamless",
+    "train_fraction": 0.8,
+    "high_quantile": 0.9,
+    "fixed_high_price": 200.0,
+    "decision_hour_local": 10
+  },
+  "model_params": {
+    "n_estimators": 300,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "objective": "reg:squarederror",
+    "random_state": 42,
+    "n_jobs": 2
+  },
+  "features": {
+    "weather": [
+      "temperature_2m",
+      "wind_speed_10m",
+      "wind_speed_100m",
+      "cloud_cover",
+      "direct_radiation",
+      "diffuse_radiation",
+      "hour",
+      "minute",
+      "dayofweek",
+      "month"
+    ],
+    "fundamentals": [
+      "generation_forecast_mw",
+      "residual_load_forecast_mw",
+      "hour",
+      "minute",
+      "dayofweek",
+      "month"
+    ]
+  },
+  "quote_method": "Frozen training mean by weekday/hour/quarter-hour, fallback hour/global mean",
+  "train_start": "2025-08-31 22:00:00+00:00",
+  "train_end": "2026-08-04 07:00:00+00:00",
+  "training_labels_available_assumed_utc": "2026-08-04 07:15:00+00:00",
+  "test_start": "2026-08-04 07:15:00+00:00",
+  "test_end": "2026-10-19 21:45:00+00:00",
+  "n_train": 29413,
+  "n_test": 7354,
+  "n_expected": 39744,
+  "n_dropped": 2977,
+  "high_threshold": 154.26800319999998,
+  "contract_eligible_intervals": 7295,
+  "predictions_sha256": "1da279b4d875e3ef1ddfdf8859f67f738663878c0391607a2e96f10a37a51363"
+}
