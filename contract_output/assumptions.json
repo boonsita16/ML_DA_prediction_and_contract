@@ -1,0 +1,28 @@
+{
+  "config": {
+    "spread_eur_mwh": 4.0,
+    "slippage_eur_mwh": 0.5,
+    "fee_eur_mwh": 0.5,
+    "risk_buffer_eur_mwh": 5.0,
+    "max_mw_per_interval": 1.0,
+    "max_daily_gross_mwh": 10.0,
+    "stress_move_eur_mwh": 100.0,
+    "daily_stress_budget_eur": 500.0
+  },
+  "timezone": "Europe/Copenhagen",
+  "synthetic": false,
+  "forecast_vintages_verified": false,
+  "excluded_unavailable_decisions": 59,
+  "source_predictions_sha256": "1da279b4d875e3ef1ddfdf8859f67f738663878c0391607a2e96f10a37a51363",
+  "assumptions": [
+    "Hypothetical financially settled fixed-price contracts, not exchange DA orders",
+    "Unlimited counterparty quote availability up to configured volume; no rejection/default/collateral costs",
+    "Frozen training-only calendar mean is quote midpoint; both models face identical bid/ask quotes",
+    "Orders selected before observing settlement prices; actual DA used only in settlement/evaluation",
+    "Stress budget is exposure under an assumed adverse move, not a guaranteed loss cap",
+    "Each model is a separate alternative strategy, not a combined portfolio",
+    "Retrospective forecast vintages are unverified; hypothetical P&L is not demonstrated achievable profit",
+    "Only complete-case forecast rows are scored; missing periods are not imputed",
+    "Zero-trade cash benchmark has zero P&L; no interest or funding included"
+  ]
+}
